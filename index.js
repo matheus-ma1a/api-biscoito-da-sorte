@@ -4,6 +4,8 @@ const { Configuration, OpenAIApi } = require("openai") ;
 const express = require('express')
 const cors = require('cors')
 
+const port = process.env.PORT || 3002
+
 const configuration = new Configuration({
   apiKey: process.env.VITE_KEY
 });
@@ -25,7 +27,7 @@ app.post('/', async (req, res) => {
   console.log('rodando')
 })
 
-app.listen(3002, ()=>{
+app.listen(port, ()=>{
   console.log('rodando')
 })
 
