@@ -15,7 +15,12 @@ const app = express()
 app.use(cors())
 
 
-app.post('/', async (req, res) => {
+app.get('/', (req, res) => {
+  res.send('Hey this is my API running 🥳')
+})
+
+
+app.post('/resposta', async (req, res) => {
   const response = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: 'me faca um mendagem estilo biscoito da sorte',
